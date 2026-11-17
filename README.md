@@ -1,4 +1,27 @@
-# stock-analyzer
-git clone https://github.com/opjemmytsang/stock-analyzer.git
-cd stock-analyzer
-僅供參考，不構成投資建議
+# Stock Analyzer — OptionRadar AI（第一階段）
+
+現有 stock-analyzer 專案加入期權研究及模擬交易功能。本版只用示範數據，暫不連接即時報價、AI 及券商。
+
+## 已有功能
+- 手機與桌面響應式介面
+- SPY、QQQ、NVDA、TSLA、AMD 示範清單
+- Call / Put、行使價、0/7/30 DTE、每張 100 股的成本、買方最大損失與到期損益平衡
+- 0× 至 15× 的期權價格情境
+- $63 模擬資金與超額購買阻擋
+- 超過當前餘額 10% 的成本風險提示
+- 本機交易日誌、勝率、平均盈虧、最大回撤及 CSV 匯出
+
+## 本地測試
+打開 index.html，或執行：
+```bash
+python3 -m http.server 8000
+```
+
+## Cloudflare Pages
+框架選 None，不設建置指令，輸出目錄設 /。
+
+## 限制
+示範股票價格和成交量全部是虛構數值，亦未有真實期權鏈、Greeks、AI 模型、券商或報價 API。倍數只是指定假設，不是預測。模擬成交未考慮點差、流動性、滑價、佣金和稅項。紀錄使用 localStorage，不跨裝置同步。工具不下真單。
+
+## 後續
+評估授權市場數據與期權鏈來源，明確區分延遲及實時資料；在可靠數據與回測具備前，不得標示「十倍成功率」或生成未核實交易訊號。
