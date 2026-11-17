@@ -1,0 +1,24 @@
+name: Stock Analyzer Checks
+on:
+  push:
+    branches: [main, feature/technical-signal-engine]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check
+        run: node --check signal-engine.js
+      - name: Signal engine unit tests
+        run: node tests/signal-engine.test.js
+      - name: Verify required pages
+        run: |
+          test -s index.html
+          test -s scanner.html
+          grep -q 'signal-engine.js' scanner.html
