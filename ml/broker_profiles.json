@@ -1,0 +1,38 @@
+{
+  "disclaimer": "Indicative public product specifications, NOT confirmed executable terms for Hong Kong residents. Verify account entity, instrument, margin tiers, spread, commissions and financing before use.",
+  "profiles": [
+    {
+      "id": "ig_international_spot_gold_1usd",
+      "source": "https://www.ig.com/en/commodities/markets-commodities/gold?siteId=igm",
+      "min_contracts": 0.01,
+      "contract_oz": 1,
+      "margin_rate": 0.005,
+      "indicative_spread_usd": 0.3,
+      "commission_usd_per_contract_side": 0,
+      "financing_usd_per_oz_day": null,
+      "notes": "Website example only; financing and actual bid/ask vary; not a confirmed HK offering."
+    },
+    {
+      "id": "ig_metatrader_gold",
+      "source": "https://www.ig.com/en/help-and-support/articles/692056-what-are-ig-s-commodities-metatrader-product-details",
+      "min_contracts": 0.01,
+      "contract_oz": 100,
+      "margin_rate": 0.005,
+      "indicative_spread_usd": 0.6,
+      "commission_usd_per_contract_side": 0,
+      "financing_usd_per_oz_day": null,
+      "notes": "Different platform contract size; funding variable; not a confirmed HK offering."
+    },
+    {
+      "id": "oanda_bvi_mt5_gold",
+      "source": "https://help.oanda.com/bvi/zh-tw/faqs/minimum-trade-size.htm",
+      "min_contracts": 0.001,
+      "contract_oz": null,
+      "margin_rate": null,
+      "indicative_spread_usd": null,
+      "commission_usd_per_contract_side": null,
+      "financing_usd_per_oz_day": null,
+      "notes": "Official minimum lot only; do not simulate until contract size, margin and pricing verified."
+    }
+  ]
+}
