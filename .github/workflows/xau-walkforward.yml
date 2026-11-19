@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: '22'
       - run: python -m pip install -r ml/requirements.txt
+      - name: Syntax-check automatic paper engine
+        run: python -m compileall -q ml
       - name: Unit-test execution risk engine
         run: python -m unittest ml.test_execution -v
       - name: Download bid and ask candles
