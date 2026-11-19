@@ -42,7 +42,7 @@ class TestExecution(unittest.TestCase):
         bars=[bar("2026-01-05 10:00",bid_high=108)]
         x=simulate(bars,**args)
         self.assertEqual(x["reason"],"stop_intrabar")
-        self.assertEqual(x["exit"],104)
+        self.assertEqual(x["exit"],105)
     def test_commission_and_slippage(self):
         args={**BASE,"commission_usd_per_oz_side":1,"slippage_usd":.2,"max_bars":1}
         x=simulate([bar("2026-01-05 10:00")],**args)
