@@ -25,3 +25,8 @@ python3 -m http.server 8000
 
 ## 後續
 評估授權市場數據與期權鏈來源，明確區分延遲及實時資料；在可靠數據與回測具備前，不得標示「十倍成功率」或生成未核實交易訊號。
+## 第二階段：技術研究頁
+
+打開 `scanner.html`，可查看示範 30 根 K 線計算的 VWAP、RVOL、開市區間突破及透明研究評分。分析由 `signal-engine.js` 的規則引擎計算，**不是 AI 模型或實時交易信號**。
+
+測試指令：`node tests/signal-engine.test.js`。請先完成瀏覽器與 Node 測試再合併 PR。
