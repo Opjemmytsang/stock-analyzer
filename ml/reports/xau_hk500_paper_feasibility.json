@@ -1,0 +1,28 @@
+{
+  "status": "paper_backtest_completed",
+  "note": "No trades under illustrative 1 oz minimum, 100:1 leverage and 2% risk cap unless constraints permit",
+  "start_hkd": 500,
+  "end_hkd": 500,
+  "trades": 0,
+  "wins": 0,
+  "win_rate": null,
+  "max_drawdown": 0,
+  "blocked_by_risk_or_margin": 261,
+  "assumptions": {
+    "contract_oz": 1,
+    "minimum_oz": 1,
+    "leverage": 100,
+    "fx_hkd_per_usd": 7.8,
+    "spread_usd_per_oz": 0.5,
+    "stop_proxy_percent": 0.1,
+    "risk_percent": 2,
+    "probability_thresholds": [
+      0.42,
+      0.58
+    ],
+    "hold_bars": 4,
+    "fees_and_swap": "excluded",
+    "stop_execution": "not modeled; sizing only"
+  },
+  "interpretation": "This is a feasibility check; no real broker specification or executable simulation"
+}
