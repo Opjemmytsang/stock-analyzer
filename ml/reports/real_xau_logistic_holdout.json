@@ -1,0 +1,41 @@
+{
+  "source": "getdata-finance/xauusd-15m-ohlcv-metals-historical-data",
+  "source_sha": "1a30da07131271a3198452014b87452700d0b8e0",
+  "raw_bars": 11989,
+  "usable_samples": 8315,
+  "excluded_gap_windows": 3645,
+  "method": "train-only standardized logistic regression, gradient descent; 60/20/20 chronological split with five-bar embargo",
+  "target": "close of future bar 4 - next-bar open > 0.50 USD/oz",
+  "train": {
+    "samples": 4989,
+    "up_rate": 0.4664261375025055,
+    "accuracy": 0.5431950290639407,
+    "balanced_accuracy": 0.5203185936368447,
+    "brier": 0.24666226523229526,
+    "baseline_brier": 0.24887279575700821
+  },
+  "validation": {
+    "samples": 1658,
+    "up_rate": 0.4794933655006031,
+    "accuracy": 0.5253317249698432,
+    "balanced_accuracy": 0.5088968568034573,
+    "brier": 0.24926245925104318,
+    "baseline_brier": 0.24975023038905425
+  },
+  "test": {
+    "samples": 1658,
+    "up_rate": 0.4505428226779252,
+    "accuracy": 0.5572979493365501,
+    "balanced_accuracy": 0.5227995773801389,
+    "brier": 0.24494860194283466,
+    "baseline_brier": 0.24780626730114183
+  },
+  "test_start": "2026-08-21T04:00:00.000Z",
+  "test_end": "2026-09-25T19:30:00.000Z",
+  "limitations": [
+    "Independent JS baseline, not Python gradient boosting model",
+    "Uncalibrated probabilities; single holdout",
+    "No real broker spread, swaps or slippage",
+    "Source data is third party, not independently audited"
+  ]
+}
