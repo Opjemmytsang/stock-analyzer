@@ -1,0 +1,32 @@
+name: XAU walk-forward research validation
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'ml/**'
+      - '.github/workflows/xau-walkforward.yml'
+jobs:
+  walkforward:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install -r ml/requirements.txt
+      - name: Download bid and ask candles
+        run: bash ml/download_history.sh
+      - name: Run multi-year walk-forward and paper simulation
+        run: python ml/walkforward.py --data ml/data --output ml/artifacts/walkforward
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: xau-walkforward-report
+          path: ml/artifacts/walkforward/
+          retention-days: 14
